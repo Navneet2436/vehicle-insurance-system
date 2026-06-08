@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Records</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                Vehicle Insurance System
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./add_insurance.html">Add Insurance</a></li>
+                <li><a href="records.html">Records</a></li>
+                <li><a href="renewal.html">Renewals</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- Records Section -->
+    <section class="records-section">
+
+        <h1>Insurance Records</h1>
+
+        <div class="search-box">
+            <input type="text" id="searchInput"
+                placeholder="Search by Owner Name or Vehicle Number">
+        </div>
+
+        <div class="dashboard">
+
+            <div class="card">
+                <h3>Total Policies</h3>
+                <p id="totalCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Active</h3>
+                <p id="activeCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Renewal Due</h3>
+                <p id="dueCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Expired</h3>
+                <p id="expiredCount">0</p>
+            </div>
+
+        </div>
+
+        <!-- ✅ EXPORT BUTTONS (FIXED POSITION) -->
+        <div style="margin: 15px 0; text-align: right;">
+            <button class="" onclick="exportToExcel()">📊 Export Excel</button>
+            <button onclick="exportToPDF()">📄 Export PDF</button>
+        </div>
+
+        <table class="records-table">
+
+            <thead>
+                <tr>
+                    <th>Owner</th>
+                    <th>Vehicle No</th>
+                    <th>Type</th>
+                    <th>Provider</th>
+                    <th>Start Date</th>
+                    <th>Expiry Date</th>
+                    <th>Premium</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="recordsBody"></tbody>
+
+        </table>
+
+    </section>
+
+    <!-- JS FILES -->
+    <script src="script.js"></script>
+
+    <!-- EXTERNAL LIBRARIES -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Insurance Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                Vehicle Insurance System
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./add_insurance.html">Add Insurance</a></li>
+                <li><a href="records.html">Records</a></li>
+                <li><a href="renewal.html">Renewal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+
+        <!-- Left Side -->
+        <div class="hero-text">
+            <h1>Manage Vehicle Insurance Easily</h1>
+
+            <p>
+                A simple way to manage vehicle insurance information and renewals,
+                Manage all your vehicle insurance information efficiently,
+                Store, update, and view vehicle insurance details anytime.
+            </p>
+
+            <button onclick="window.location.href='add_insurance.html'">
+                Get Started
+            </button>
+        </div>
+
+        <!-- Right Side Dashboard Card -->
+        <div class="hero-card">
+
+            <h2>Insurance Summary</h2>
+
+            <div class="summary-box">
+                <h3 id="summaryActive">0</h3>
+                <p>Active Policies</p>
+            </div>
+
+            <div class="summary-box">
+                <h3 id="summaryRenewals">0</h3>
+                <p>Renewals This Month</p>
+            </div>
+
+        </div>
+
+    </section>
+    <section class="stats">
+
+        <div class="stat-box">
+            <h2>0</h2>
+            <p>Active Policies</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>0</h2>
+            <p>Renewals Due</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>0</h2>
+            <p>Total Vehicles</p>
+        </div>
+
+    </section>
+    <section class="features">
+        <div class="card">
+            <h2>Add Insurance</h2>
+            <p>Add new vehicle insurance records.</p>
+        </div>
+        <div class="card">
+            <h2>Track Renewals</h2>
+            <p>Monitor expiry and renewal dates.</p>
+        </div>
+        <div class="card">
+            <h2>Manage Records</h2>
+            <p>View and organize insurance data.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+
+            const records =
+                JSON.parse(localStorage.getItem("insuranceRecords")) || [];
+
+            let totalVehicles = records.length;
+            let activePolicies = 0;
+            let renewalsDue = 0;
+
+            const today = new Date();
+
+            records.forEach(record => {
+
+                const expiry = new Date(record.expiryDate);
+                const daysLeft = Math.ceil((expiry - today) / (1000 * 60 * 60 * 24));
+
+                if (daysLeft <= 30 && daysLeft >= 0) {
+                    renewalsDue++;
+                }
+                else if (daysLeft > 30) {
+                    activePolicies++;
+                }
+            });
+
+            const totalEl = document.querySelectorAll(".stat-box h2")[2];
+            const activeEl = document.querySelectorAll(".stat-box h2")[0];
+            const renewEl = document.querySelectorAll(".stat-box h2")[1];
+
+            if (totalEl) totalEl.innerText = totalVehicles;
+            if (activeEl) activeEl.innerText = activePolicies;
+            if (renewEl) renewEl.innerText = renewalsDue;
+        });
+    </script>
+</body>
+
+</html>

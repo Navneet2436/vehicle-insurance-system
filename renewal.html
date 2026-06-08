@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewal Tracking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                Vehicle Insurance System
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./add_insurance.html">Add Insurance</a></li>
+                <li><a href="records.html">Records</a></li>
+                <li><a href="renewal.html">Renewals</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- Renewal Section -->
+    <section class="records-section">
+
+        <h1>Insurance Renewals</h1>
+
+        <table class="records-table">
+            <!-- Table Head--Contains column headings -->
+            <thead>
+                <tr>
+                    <th>Owner</th>
+                    <th>Vehicle Number</th>
+                    <th>Expiry Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <!-- Means Table Body Contains the actual data rows
+             id="renewalBody"Unique identifier JavaScript can access this element. -->
+            <tbody id="renewalBody">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

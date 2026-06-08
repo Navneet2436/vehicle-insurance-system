@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Insurance</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                Vehicle Insurance System
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="add_insurance.html">Add Insurance</a></li>
+                <li><a href="records.html">Records</a></li>
+                <li><a href="renewal.html">Renewals</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- ================= FORM SECTION ================= -->
+    <section class="insurance-form-section">
+
+        <div class="form-container">
+
+            <h1>Add Vehicle Insurance</h1>
+
+            <!-- OPTIONAL: Edit mode indicator -->
+            <p id="editModeText" style="color: orange; font-weight: bold; display: none;">
+                ✏️ Editing Mode
+            </p>
+
+            <form id="insuranceForm" autocomplete="off">
+
+                <div class="input-group">
+                    <label>Owner Name</label>
+                    <input type="text" id="ownerName" placeholder="Enter owner name" required pattern="[A-Za-z ]+"
+                        title="Owner Name should contain alphabets only">
+                </div>
+
+                <div class="input-group">
+                    <label>Vehicle Number</label>
+                    <input id="vehicleNumber" type="text"
+                        placeholder="e.g. PB-10-AB-1234"
+                        required>
+                </div>
+
+                <div class="input-group">
+                    <label>Vehicle Type</label>
+                    <select id="vehicleType" required>
+                        <option value="" disabled selected>Select Vehicle Type</option>
+                        <option>Car</option>
+                        <option>Bike</option>
+                        <option>Truck</option>
+                        <option>Scooter</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Insurance Provider</label>
+                    <input id="insuranceProvider" type="text"
+                        placeholder="Enter company name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Start Date</label>
+                    <input id="startDate" type="date" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Expiry Date</label>
+                    <input id="expiryDate" type="date" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Premium Amount</label>
+                    <input id="premiumAmount" type="number"
+                        placeholder="Enter premium amount" required>
+                </div>
+
+                <button type="submit">Add Insurance</button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- ================= SCRIPT ================= -->
+    <script src="script.js"></script>
+
+    <!-- OPTIONAL: Show edit mode -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const editIndex = localStorage.getItem("editIndex");
+
+            if (editIndex !== null) {
+                const text = document.getElementById("editModeText");
+                if (text) text.style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+
+</html>

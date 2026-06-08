@@ -1,0 +1,651 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    /* With this padding navbar doesnot overlaps content  */
+    padding-top: 90px;
+}
+
+.navbar {
+    background-color: #1f2937;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+
+    /* Fixed Navbar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 140px;
+    padding: 60px 80px;
+    flex-wrap: wrap;
+    /* text adjusts automatically smaller when the sreen size is small instead of breaking */
+}
+
+.hero-text {
+    max-width: 550px;
+}
+
+.hero-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    width: 320px;
+    box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.hero-card:hover {
+    /* Card moves upward when hovered */
+    transform: translateY(-8px);
+}
+
+.hero-card h2 {
+    margin-bottom: 20px;
+    color: #1f2937;
+}
+
+.summary-box {
+    background: #f8fafc;
+    padding: 22px;
+    border-radius: 12px;
+    margin-top: 18px;
+    text-align: center;
+}
+
+.summary-box h3 {
+    font-size: 35px;
+    color: #2563eb;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #1f2937;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #262626;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    width: 300px;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.card p {
+    color: #666;
+}
+
+/* Smooth animation */
+.card,
+button,
+.nav-links a {
+    transition: 0.3s;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero Summary Card Hover */
+.hero-card:hover {
+    transform: translateY(-8px);
+    transition: 0.3s;
+}
+
+/* Button Hover */
+button:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.05);
+    /* Button becomes slightly larger */
+}
+
+/* Navbar Hover */
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+/* Stats Card */
+.stat-box {
+    background: white;
+    width: 250px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.stat-box:hover {
+    transform: translateY(-10px);
+}
+
+/* Number */
+.stat-box h2 {
+    font-size: 40px;
+    color: #2563eb;
+}
+
+/* Text */
+.stat-box p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Form Section */
+.insurance-form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+/* Form Box */
+.form-container {
+    background: white;
+    width: 500px;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Heading */
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1f2937;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Inputs + Select */
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* Input Focus Effect */
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* Records Section */
+.records-section {
+    padding: 50px;
+}
+
+/* Heading */
+.records-section h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1f2937;
+}
+
+/* Table */
+.records-table {
+    width: 100%;
+    /* Removes double borders */
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Headings */
+.records-table th {
+    background-color: #1f2937;
+    color: white;
+    padding: 18px;
+    text-align: center;
+}
+
+/* Table Data */
+.records-table td {
+    padding: 16px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Hover Effect */
+.records-table tr:hover {
+    background-color: #f4f6f9;
+}
+
+/* search box */
+.search-box {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-box input {
+    width: 350px;
+    padding: 12px;
+    border: 2px solid #2563eb;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* ================= DASHBOARD CARDS ================= */
+.dashboard {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.card {
+    flex: 1;
+    min-width: 180px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.card p {
+    font-size: 22px;
+    margin: 10px 0 0;
+    font-weight: bold;
+}
+
+/* ================= SEARCH ================= */
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* ================= TABLE ================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #007bff;
+    color: white;
+}
+
+/* ================= BUTTONS ================= */
+button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:nth-child(1) {
+    background: #484b49;
+    color: white;
+}
+
+button:nth-child(2) {
+    background: #dc3545;
+    color: white;
+}
+
+
+/* ================= STATUS COLORS ================= */
+.status-active {
+    color: green;
+    font-weight: bold;
+}
+
+.status-due {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-expired {
+    color: red;
+    font-weight: bold;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+
+    .hero {
+        gap: 60px;
+        padding: 40px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero-card {
+        width: 280px;
+    }
+
+    .stats {
+        gap: 20px;
+    }
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+
+    .hero {
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-card,
+    .form-container {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .records-section {
+        padding: 20px;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+    body {
+        padding-top: 130px; /* navbar becomes taller */
+    }
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    /* Hero */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-card,
+    .form-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Features */
+    .features {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    /* Stats */
+    .stats {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .stat-box {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* Dashboard */
+    .dashboard {
+        flex-direction: column;
+    }
+
+    /* Search */
+    .search-box input,
+    #searchInput {
+        width: 100%;
+    }
+
+    /* Records Section */
+    .records-section {
+        padding: 10px;
+    }
+
+    /* Table Wrapper */
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table,
+    .records-table {
+        min-width: 900px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Export Buttons */
+    .export-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .export-buttons button {
+        width: 100%;
+    }
+
+    /* Form Buttons */
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Notifications */
+    #notificationBox {
+        margin: 10px;
+    }
+}
+
+
+/* ================= SMALL PHONES ================= */
+@media (max-width: 480px) {
+
+    body {
+        padding-top: 150px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .stat-box h2 {
+        font-size: 30px;
+    }
+
+    .card p {
+        font-size: 18px;
+    }
+}
